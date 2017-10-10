@@ -1,3 +1,6 @@
+require('dotenv').config();
+var Dotenv = require('dotenv-webpack');
+
 module.exports = {
   entry: [
     './src/index.js'
@@ -16,6 +19,12 @@ module.exports = {
       }
     }]
   },
+  plugins: [
+    new Dotenv({
+      path: './.env',
+      safe: true
+    })
+  ],
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
