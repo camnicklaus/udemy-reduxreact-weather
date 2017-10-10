@@ -14,5 +14,3 @@ export function fetchWeather(city) {
     payload: request
   }
 }
-
-// http://api.openweathermap.org/data/2.5/forecast?&q=Seattle,us&appid=d5fb03866b025ebec0aeadc187674766
