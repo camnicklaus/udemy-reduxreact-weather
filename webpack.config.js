@@ -1,5 +1,6 @@
 require('dotenv').config();
 var Dotenv = require('dotenv-webpack');
+var webpack = require('webpack');
 
 module.exports = {
   entry: [
@@ -20,6 +21,10 @@ module.exports = {
     }]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }),
+    
     new Dotenv({
       path: './.env',
       safe: true
